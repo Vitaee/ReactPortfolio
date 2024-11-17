@@ -1,4 +1,3 @@
-import React from 'react';
 import { UserCheck } from 'lucide-react';
 
 export function Recommendations() {

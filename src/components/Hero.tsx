@@ -1,4 +1,3 @@
-import React from 'react';
 import { Github, Linkedin, Mail } from 'lucide-react';
 import { TypeWriter } from './TypeWriter';
 
@@ -32,7 +31,7 @@ export function Hero() {
         </p>
         <div className="animate-fade-in flex gap-6 justify-center mb-12">
           <a 
-            href="https://github.com" 
+            href="https://github.com/Vitaee" 
             className="text-gray-300 hover:text-white transition-colors transform hover:scale-110"
             target="_blank"
             rel="noopener noreferrer"
@@ -40,7 +39,7 @@ export function Hero() {
             <Github size={24} />
           </a>
           <a 
-            href="https://linkedin.com" 
+            href="https://www.linkedin.com/in/can-ilgu-657730198/" 
             className="text-gray-300 hover:text-white transition-colors transform hover:scale-110"
             target="_blank"
             rel="noopener noreferrer"
@@ -48,7 +47,7 @@ export function Hero() {
             <Linkedin size={24} />
           </a>
           <a 
-            href="mailto:contact@example.com" 
+            href="mailto:canilguu@gmail.com" 
             className="text-gray-300 hover:text-white transition-colors transform hover:scale-110"
           >
             <Mail size={24} />

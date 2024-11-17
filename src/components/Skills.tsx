@@ -1,4 +1,3 @@
-import React from 'react';
 import { Code2, Database, Server, Layout } from 'lucide-react';
 
 export function Skills() {

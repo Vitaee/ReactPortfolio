@@ -19,7 +19,7 @@ export function Navigation() {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <a href="#home" className="text-2xl font-bold text-white">
-            Portfolio
+            Can İlgu
           </a>
           <div className="hidden md:flex space-x-8">
             <a href="#home" className="text-gray-300 hover:text-white transition-colors">Home</a>

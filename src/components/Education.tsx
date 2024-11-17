@@ -1,4 +1,3 @@
-import React from 'react';
 import { GraduationCap } from 'lucide-react';
 
 export function Education() {
@@ -23,7 +22,7 @@ export function Education() {
                 </div>
               </div>
               <p className="text-gray-300">
-                Near East Boulevard, ZIP: 99138, Nicosia TRNC Mersin 10 – Turkey, 99100, Nicosia, Cyprus
+                Near East Boulevard, ZIP: 99138, Nicosia Cyprus
               </p>
             </div>
           </div>

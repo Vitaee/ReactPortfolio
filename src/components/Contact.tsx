@@ -1,4 +1,3 @@
-import React from 'react';
 import { Mail, Linkedin, Github } from 'lucide-react';
 
 export function Contact() {
@@ -11,15 +10,15 @@ export function Contact() {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <a
-            href="mailto:contact@example.com"
+            href="mailto:canilguu@gmail.com"
             className="flex flex-col items-center p-6 bg-gray-800/50 rounded-xl hover:bg-gray-800/70 transition-colors"
           >
             <Mail className="w-8 h-8 mb-4 text-blue-400" />
             <h3 className="text-xl font-bold mb-2">Email</h3>
-            <p className="text-gray-300">contact@example.com</p>
+            <p className="text-gray-300">canilguu@gmail.com</p>
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/can-ilgu-657730198/"
             className="flex flex-col items-center p-6 bg-gray-800/50 rounded-xl hover:bg-gray-800/70 transition-colors"
           >
             <Linkedin className="w-8 h-8 mb-4 text-blue-400" />
@@ -27,7 +26,7 @@ export function Contact() {
             <p className="text-gray-300">Connect with me</p>
           </a>
           <a
-            href="https://github.com"
+            href="https://github.com/Vitaee"
             className="flex flex-col items-center p-6 bg-gray-800/50 rounded-xl hover:bg-gray-800/70 transition-colors"
           >
             <Github className="w-8 h-8 mb-4 text-blue-400" />
