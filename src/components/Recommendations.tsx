@@ -17,7 +17,7 @@ export function Recommendations() {
       description: "Worked together at Gunsel Electric Vehicle company",
       contact: {
         email: "yakupbeyoglu@gmail.com",
-        phone: "(+90) 5338308627",
+        phone: "",
       },
     },
   ];
