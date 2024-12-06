@@ -10,12 +10,12 @@ export function Skills() {
     {
       icon: <Server className="w-8 h-8 text-purple-400" />,
       title: "Backend Development",
-      skills: ["Java", "PHP", "Laravel", "Python", "Node.js", "REST APIs"]
+      skills: ["Java", "PHP", "Laravel", "Python", "Django", "Node.js", "REST APIs"]
     },
     {
       icon: <Database className="w-8 h-8 text-green-400" />,
       title: "Database & DevOps",
-      skills: ["Oracle", "MySQL", "PL/SQL", "Docker", "Git", "Linux/Ubuntu"]
+      skills: ["Oracle", "MySQL", "PL/SQL", "PostgreSQL", "MongoDB", "Docker", "Git", "Linux/Ubuntu"]
     },
     {
       icon: <Layout className="w-8 h-8 text-yellow-400" />,

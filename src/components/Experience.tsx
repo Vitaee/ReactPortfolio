@@ -19,7 +19,7 @@ export function Experience() {
     },
     {
       title: "Full-Stack Software Engineer",
-      company: "Wallmer Promotion Ltd.",
+      company: "Freelance",
       period: "Apr 2024 - Aug 2024",
       location: "Budapest, Hungary (Remote)",
       responsibilities: [
@@ -30,6 +30,34 @@ export function Experience() {
         "Created detailed documentation and maintenance guides"
       ],
       stack: "Statamic CMS, Laravel, Tailwind CSS, MySQL, Docker, Docker Compose, Ubuntu Server"
+    },
+    {
+      title: "Part-time Software Engineer",
+      company: "Budapest University of Technology and Economics",
+      period: "Apr 2023 - Aug 2023",
+      location: "Budapest, Hungary remote",
+      responsibilities: [
+        "Supporting machine learning-based production forecasting method for a company that operates solar systems.",
+        "Writing clean, high-quality, high-performance, maintainable code.",
+        "Developing and supporting software including applications, database integration, APIs, and new functionality enhancements.",
+        "Managing and prepparing docker containers, database queries, logging and error handling, database designs and documentations."
+      ],
+      stack: "Django, Python, Docker, Kubernetes, RabbitMQ, Redis, MySQL, OpenVPN"
+    },
+    {
+      title: "Software Engineer",
+      company: "Gunsel Electric Vehicles",
+      period: "May 2021 - Aug 2023",
+      location: "Nicosia, Cyprus",
+      responsibilities: [
+        "Developing, maintaining, and documenting Digital Instrument Cluster application development. Highly responsible on front-end part.",
+        "Developed demo applications for both DIC and IVI according to new designed UIs which prepared by the design team.",
+        "Analyzing Software Requirements and meet up with design teams, project managers, and homologation teams to build High performance secure, safety-critical, and human-friendly Infotainment cluster applications.",
+        "Doing weekly meetings with software team to achieve infotainment cluster and IVI-related software applications with Agile methodologies. Highly responsible for sharing tasks between software developers in the team.",
+        "Reviewing technical proposals from tier-1 embedded device & software support suppliers.",
+
+      ],
+      stack: "QT, QML, QTest, QT Creator, QT Design Studio, JavasScript, Bash, Python, Gitlab, Jira",
     }
   ];
 

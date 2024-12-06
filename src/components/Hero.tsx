@@ -55,13 +55,13 @@ export function Hero() {
         </div>
         <div className="animate-fade-in-up flex gap-4 justify-center">
           <a 
-            href="#projects" 
+            href="https://github.com/Vitaee?tab=repositories" 
             className="px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium transition-all hover:scale-105 transform"
           >
             View Projects
           </a>
           <a 
-            href="#contact" 
+            href="mailto:canilguu@gmail.com" 
             className="px-8 py-3 border border-blue-600 rounded-lg font-medium hover:bg-blue-600/10 transition-all hover:scale-105 transform"
           >
             Contact Me
