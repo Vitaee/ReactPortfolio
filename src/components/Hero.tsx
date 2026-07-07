@@ -1,79 +1,113 @@
 import { Github, Linkedin, Mail } from 'lucide-react';
 import { TypeWriter } from './TypeWriter';
+import { Button } from '@/components/ui/button';
+import {
+  Tooltip,
+  TooltipTrigger,
+  TooltipContent,
+} from '@/components/ui/tooltip';
 
 export function Hero() {
   const traits = [
-    "Software Development Specialist",
-    "Critical Thinker",
-    "Problem Solver",
-    "Team Player",
-    "Tech Enthusiast",
-    "Continuous Learner"
+    "Full Stack Engineer",
+    "Systematic Thinking",
+    "Open Source Author",
+    "Python & TypeScript"
   ];
 
   return (
-    <section className="py-20 flex flex-col items-center justify-center min-h-screen" id="home">
-      <div className="max-w-4xl mx-auto text-center">
-        <h1 className="animate-fade-in-down text-5xl md:text-7xl font-bold mb-6">
-          <span className="bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">
-            I'm a{' '}
-          </span>
-          <TypeWriter 
-            words={traits}
-            typingSpeed={100}
-            deletingSpeed={50}
-            pauseTime={2000}
-          />
-        </h1>
-        <p className="animate-fade-in-up text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
-          Dedicated software engineer with a passion for crafting innovative solutions that enhance organizational
-          efficiency and success. Specializing in developing reliable, user-friendly systems with clean, high-performance code.
-        </p>
-        <div className="animate-fade-in flex gap-6 justify-center mb-12">
-          <a 
-            href="https://github.com/Vitaee" 
-            className="text-gray-300 hover:text-white transition-colors transform hover:scale-110"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Github size={24} />
-          </a>
-          <a 
-            href="https://www.linkedin.com/in/can-ilgu-657730198/" 
-            className="text-gray-300 hover:text-white transition-colors transform hover:scale-110"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Linkedin size={24} />
-          </a>
-          <a 
-            href="mailto:canilguu@gmail.com" 
-            className="text-gray-300 hover:text-white transition-colors transform hover:scale-110"
-          >
-            <Mail size={24} />
-          </a>
+    <section className="relative py-20 flex flex-col items-center justify-center min-h-screen" id="home">
+      <div className="relative z-10 max-w-4xl mx-auto text-center">
+
+        <div className="hero-enter hero-enter-1">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 text-zinc-50">
+            Hi, I'm Can İlgu.
+          </h1>
         </div>
-        <div className="animate-fade-in-up flex gap-4 justify-center">
-          <a 
-            href="https://github.com/Vitaee?tab=repositories" 
-            className="px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium transition-all hover:scale-105 transform"
-          >
-            View Projects
-          </a>
-          <a 
-            href="mailto:canilguu@gmail.com" 
-            className="px-8 py-3 border border-blue-600 rounded-lg font-medium hover:bg-blue-600/10 transition-all hover:scale-105 transform"
-          >
-            Contact Me
-          </a>
+
+        <div className="hero-enter hero-enter-2">
+          <div className="text-xl sm:text-2xl md:text-3xl mb-6 text-zinc-400">
+            <span className="text-zinc-500">I'm a </span>
+            <span className="text-green-400">
+              <TypeWriter
+                words={traits}
+                typingSpeed={100}
+                deletingSpeed={50}
+                pauseTime={2000}
+              />
+            </span>
+          </div>
         </div>
-      </div>
-      <div className="absolute bottom-10 animate-bounce">
-        <a href="#experience" className="text-gray-400 hover:text-white">
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
-        </a>
+
+        <div className="hero-enter hero-enter-3">
+          <p className="text-lg sm:text-xl text-zinc-400 mb-8 leading-relaxed max-w-2xl mx-auto">
+            I build things that moved from vehicle infotainment systems to real-time logistics platforms serving Swiss
+            transportation networks. 6 years turning complex systems into clean,
+            scalable code across Python, TypeScript, and everything in between.
+          </p>
+        </div>
+
+        <div className="hero-enter hero-enter-4">
+          <div className="flex gap-6 justify-center mb-12">
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <a
+                  href="https://github.com/Vitaee"
+                  className="text-zinc-500 hover:text-green-400 transition-colors duration-200 transform hover:scale-110 inline-flex items-center justify-center min-w-[44px] min-h-[44px]"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Github size={24} />
+                </a>
+              </TooltipTrigger>
+              <TooltipContent>GitHub</TooltipContent>
+            </Tooltip>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <a
+                  href="https://www.linkedin.com/in/can-ilgu-657730198/"
+                  className="text-zinc-500 hover:text-green-400 transition-colors duration-200 transform hover:scale-110 inline-flex items-center justify-center min-w-[44px] min-h-[44px]"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Linkedin size={24} />
+                </a>
+              </TooltipTrigger>
+              <TooltipContent>LinkedIn</TooltipContent>
+            </Tooltip>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <a
+                  href="mailto:canilguu@gmail.com"
+                  className="text-zinc-500 hover:text-green-400 transition-colors duration-200 transform hover:scale-110 inline-flex items-center justify-center min-w-[44px] min-h-[44px]"
+                >
+                  <Mail size={24} />
+                </a>
+              </TooltipTrigger>
+              <TooltipContent>Email</TooltipContent>
+            </Tooltip>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild className="bg-green-500 hover:bg-green-400 text-black font-semibold px-8 py-3 text-base transition-all duration-200 hover:scale-105 transform">
+              <a href="#projects">
+                View Projects →
+              </a>
+            </Button>
+            <Button variant="outline" asChild className="border-green-500/50 text-green-400 hover:bg-green-500/10 px-8 py-3 text-base font-medium transition-all duration-200 hover:scale-105 transform">
+              <a href="mailto:canilguu@gmail.com">
+                Contact Me
+              </a>
+            </Button>
+          </div>
+        </div>
+
+        <div className="hero-enter hero-enter-5">
+          <div className="flex items-center justify-center gap-2 mt-10 text-sm text-zinc-500">
+            <span className="status-dot" />
+          </div>
+        </div>
+
       </div>
     </section>
   );

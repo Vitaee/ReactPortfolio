@@ -1,48 +1,107 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@keyframes fade-in-down {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-fade-in-down: fade-in-down 0.8s ease-out;
+  --animate-fade-in-up: fade-in-up 0.8s ease-out;
+  --animate-fade-in: fade-in 1s ease-out forwards;
+  --animate-pulse-glow: pulse-glow 2s ease-in-out infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-shimmer: shimmer 2s linear infinite;
+
+  @keyframes accordion-down {
+    from { height: 0; }
+    to { height: var(--radix-accordion-content-height); }
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+  @keyframes accordion-up {
+    from { height: var(--radix-accordion-content-height); }
+    to { height: 0; }
+  }
+  @keyframes fade-in-down {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fade-in-up {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 8px rgba(34, 197, 94, 0.4); }
+    50% { box-shadow: 0 0 24px rgba(34, 197, 94, 0.8), 0 0 48px rgba(34, 197, 94, 0.2); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
   }
 }
 
-@keyframes fade-in-up {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
+/*
+ * Terminal Dark Theme
+ * Color palette: near-black + neon green accent
+ */
+@layer base {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #fafafa;
+    --card: rgba(255, 255, 255, 0.03);
+    --card-foreground: #fafafa;
+    --popover: #111111;
+    --popover-foreground: #fafafa;
+    --primary: #22c55e;
+    --primary-foreground: #052e16;
+    --secondary: rgba(255, 255, 255, 0.06);
+    --secondary-foreground: #a1a1aa;
+    --muted: rgba(255, 255, 255, 0.06);
+    --muted-foreground: #a1a1aa;
+    --accent: rgba(34, 197, 94, 0.1);
+    --accent-foreground: #4ade80;
+    --destructive: #ef4444;
+    --destructive-foreground: #fafafa;
+    --border: rgba(255, 255, 255, 0.08);
+    --input: rgba(255, 255, 255, 0.08);
+    --ring: #22c55e;
+    --radius: 0.625rem;
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.animate-fade-in-down {
-  animation: fade-in-down 1s ease-out;
-}
-
-.animate-fade-in-up {
-  animation: fade-in-up 1s ease-out;
-}
-
-.animate-fade-in {
-  animation: fade-in 1s ease-out forwards;
 }
 
 html {
@@ -50,21 +109,281 @@ html {
 }
 
 body {
-  @apply bg-gray-900 text-white;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+/* ==========================================
+   GLASSMORPHISM CARDS
+   ========================================== */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.2s ease;
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(34, 197, 94, 0.3);
+  box-shadow: 0 8px 32px rgba(34, 197, 94, 0.08);
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+   TIMELINE
+   ========================================== */
+.timeline-container {
+  position: relative;
+  padding-left: 2.5rem;
+}
+
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  left: 0.75rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(34, 197, 94, 0.5) 5%,
+    rgba(34, 197, 94, 0.5) 95%,
+    transparent
+  );
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -1.875rem;
+  top: 1.5rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #22c55e;
+  border: 3px solid #0a0a0a;
+  z-index: 1;
+}
+
+.timeline-dot-active {
+  animation: pulse-glow 2s ease-in-out infinite;
+  box-shadow: 0 0 12px rgba(34, 197, 94, 0.6);
+}
+
+/* ==========================================
+   SECTION DIVIDERS
+   ========================================== */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.08) 20%,
+    rgba(34, 197, 94, 0.2) 50%,
+    rgba(255, 255, 255, 0.08) 80%,
+    transparent
+  );
+}
+
+/* ==========================================
+   GREEN GLOW EFFECTS
+   ========================================== */
+.glow-green {
+  transition: box-shadow 0.2s ease;
+}
+
+.glow-green:hover {
+  box-shadow: 0 0 24px rgba(34, 197, 94, 0.15);
+}
+
+/* ==========================================
+   SECTION HEADING — LEFT-ALIGNED WITH ACCENT
+   ========================================== */
+.section-heading {
+  position: relative;
+  text-align: left;
+}
+
+.section-heading::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, #22c55e, #4ade80);
+  border-radius: 2px;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  color: #a1a1aa;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  font-weight: 400;
+}
+
+/* ==========================================
+   CODE COMMENT STYLE
+   ========================================== */
+.code-comment {
+  font-family: var(--font-mono);
+  color: #a1a1aa;
+  font-size: 0.875rem;
+}
+
+.code-comment::before {
+  content: '/* ';
+  color: #22c55e;
+}
+
+.code-comment::after {
+  content: ' */';
+  color: #22c55e;
+}
+
+/* ==========================================
+   HERO STAGGERED ENTRY
+   ========================================== */
+.hero-enter {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: hero-fade-up 0.8s ease-out forwards;
+}
+
+.hero-enter-1 { animation-delay: 0.1s; }
+.hero-enter-2 { animation-delay: 0.25s; }
+.hero-enter-3 { animation-delay: 0.4s; }
+.hero-enter-4 { animation-delay: 0.55s; }
+.hero-enter-5 { animation-delay: 0.7s; }
+
+@keyframes hero-fade-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================
+   STATUS INDICATOR
+   ========================================== */
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
+  animation: status-pulse 2s ease-in-out infinite;
+}
+
+@keyframes status-pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 8px rgba(34, 197, 94, 0.6); }
+  50% { opacity: 0.6; box-shadow: 0 0 16px rgba(34, 197, 94, 0.3); }
+}
+
+/* ==========================================
+   SCROLLBAR
+   ========================================== */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-gray-900;
+  background: #0a0a0a;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-gray-700 rounded-full;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-gray-600;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ==========================================
+   SELECTION HIGHLIGHT
+   ========================================== */
+::selection {
+  background: rgba(34, 197, 94, 0.3);
+  color: #fafafa;
+}
+
+/* ==========================================
+   SKIP TO CONTENT (A11Y)
+   ========================================== */
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #22c55e;
+  color: #052e16;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  z-index: 9999;
+  transition: top 0.2s ease;
+  text-decoration: none;
+}
+
+.skip-to-content:focus {
+  top: 0;
+}
+
+/* ==========================================
+   FOCUS-VISIBLE STYLES (A11Y)
+   ========================================== */
+:focus-visible {
+  outline: 2px solid #22c55e;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Remove default outline for mouse users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Enhanced focus for glass cards */
+.glass-card:focus-visible {
+  outline: 2px solid #22c55e;
+  outline-offset: 4px;
+  box-shadow: 0 0 24px rgba(34, 197, 94, 0.15);
+}
+
+/* ==========================================
+   PREFERS-REDUCED-MOTION
+   ========================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .timeline-dot-active {
+    animation: none;
+    box-shadow: 0 0 8px rgba(34, 197, 94, 0.4);
+  }
+
+  .glass-card:hover {
+    transform: none;
+  }
 }
