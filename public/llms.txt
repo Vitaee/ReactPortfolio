@@ -1,0 +1,40 @@
+# Can İlgu — Senior Full Stack & Systems Engineer
+
+> Senior Systems & Full Stack Engineer with 6+ years of experience architecting distributed logistics pipelines, Kubernetes multi-pod microservices, and safety-critical automotive embedded software. Published open-source author of `fastapi-observer` on PyPI. Based in Kyrenia, Cyprus (UTC+3); open to remote global contracts and EU/UK relocation.
+
+## Flagship Systems & Architecture
+
+- [fastapi-observer](https://pypi.org/project/fastapi-observer/): High-performance, production-ready observability and metrics collection middleware for FastAPI applications. Published on PyPI.
+- [ARQH Swiss Logistics Engine](https://canilgu.dev/#systems): Distributed real-time logistics infrastructure handling thousands of daily freight movements. Implements CQRS (Command Query Responsibility Segregation), Redis Pub/Sub low-latency event buses (<10ms UI sync), and Kubernetes multi-pod horizontal pod autoscaling.
+- [Günsel Electric Vehicles Driver Information Cluster](https://canilgu.dev/#systems): Safety-critical in-vehicle digital instrument cluster (DIC) engineered in C++ / Qt / QML, compliant with AUTOSAR frameworks and MISRA C++ automotive standards within a deterministic sub-16ms frame budget.
+- [CARLA Autonomous Driving Deep Learning Perception](https://canilgu.dev/#systems): MTech thesis research developing end-to-end multi-camera deep neural perception models evaluated under extreme weather conditions in CARLA Simulator.
+
+## Core Technical Proficiencies
+
+- **Software Architecture & Patterns**: CQRS, Hexagonal (Ports & Adapters), Domain-Driven Design (DDD), Test-Driven Development (TDD), Microservices Architecture, Event-Driven Architecture.
+- **Languages & Frameworks**: Python (FastAPI, Django, AsyncIO, Typing), TypeScript (React, Next.js, Hono.js), C++ (Qt, QML, Embedded Systems), SQL (PostgreSQL, PL/SQL), PHP (Laravel, Modern Serverless Bref).
+- **Runtimes & Tooling**: Bun.sh CLI, Node.js, MongoDB & Mongo Compass, Docker, Git.
+- **Data & Infrastructure**: Kubernetes Multi-Pod Scaling, Redis Pub/Sub, MongoDB Geo-Spatial Sharding, PostgreSQL Concurrency Optimization, RabbitMQ, Celery.
+- **DevOps & Standards**: Multi-Env CI/CD Automation (Dev / Staging / Prod), GitHub Actions, AWS (Lambda, Serverless, EC2), AUTOSAR, MISRA C++.
+
+## Professional Experience
+
+- **ARQH (Zurich, Switzerland)** — *Senior Full Stack & Systems Engineer (2026 – Present)*: Leading distributed logistics backends, K8s multi-pod scaling, and real-time fleet synchronization across Swiss transport corridors.
+- **GenfoQuest (Izmir, Turkey)** — *Full Stack Engineer (2025 – 2026)*: Architected scalable web applications and microservices.
+- **Vodafone Northern Cyprus** — *Invoice & Software Specialist (2023 – 2025)*: Automated high-volume billing verification pipelines and enterprise billing software.
+- **Günsel Electric Vehicles** — *Software Engineer (2021 – 2023)*: Engineered safety-critical digital instrument clusters adhering to AUTOSAR and MISRA C++.
+- **International Contractor & Open Source** — *Engineer (2020 – 2024)*: Built serverless architectures (AWS Bref), ML devops pipelines, and published `fastapi-observer`.
+
+## Academic Background & Endorsements
+
+- **MTech in Information Technology**: Eastern Mediterranean University (Thesis: Autonomous Vehicle Perception via Deep Learning in CARLA Simulator).
+- **BSc in Software Engineering**: Near East University.
+- **Academic Endorsement**: Prof. Philip Treleaven (Director of Financial Computing Centre, University College London).
+
+## Contact & Profiles
+
+- Website: https://canilgu.dev
+- Email: canilguu@gmail.com
+- GitHub: https://github.com/Vitaee
+- LinkedIn: https://linkedin.com/in/can-ilgu-657730198
+- Full Machine-Readable Profile: https://canilgu.dev/llms-full.txt

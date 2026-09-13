@@ -14,4 +14,12 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  server: {
+    host: true,
+    allowedHosts: ['canilgu.dev', '.canilgu.dev'],
+  },
+  preview: {
+    host: true,
+    allowedHosts: ['canilgu.dev', '.canilgu.dev'],
+  },
 })

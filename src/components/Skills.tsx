@@ -1,115 +1,131 @@
-import { Code2, Database, Server, Layout, Cloud, Wrench } from 'lucide-react';
-import { Badge } from '@/components/ui/badge';
-import { useInView } from '@/hooks/useInView';
 import { AnimatedSection } from '@/components/AnimatedSection';
+import { Layers, Terminal, Database, ShieldCheck } from 'lucide-react';
 
-interface SkillCategory {
+interface SkillGroup {
   icon: React.ReactNode;
-  title: string;
+  category: string;
+  description: string;
   skills: string[];
 }
 
-function SkillCard({ category, index }: { category: SkillCategory; index: number }) {
-  const { ref, isInView } = useInView({ threshold: 0.2 });
-
-  return (
-    <div
-      ref={ref}
-      className="glass-card rounded-xl glow-green p-5 sm:p-6"
-      style={{
-        opacity: isInView ? 1 : 0,
-        transform: isInView ? 'translateY(0)' : 'translateY(30px)',
-        transition: 'opacity 0.6s ease-out, transform 0.6s ease-out',
-        transitionDelay: `${index * 100}ms`,
-      }}
-    >
-      <div className="flex items-center mb-5">
-        <div className="transition-transform duration-200 hover:rotate-12">
-          {category.icon}
-        </div>
-        <h3 className="text-lg sm:text-xl font-bold ml-3 text-zinc-50">{category.title}</h3>
-      </div>
-      <div className="flex flex-wrap gap-2">
-        {category.skills.map((skill, idx) => (
-          <Badge
-            key={idx}
-            variant="secondary"
-            className="bg-green-500/10 text-green-400 border-green-500/20 hover:bg-green-500/20 transition-all duration-200 cursor-default px-3 py-1.5 text-sm"
-          >
-            {skill}
-          </Badge>
-        ))}
-      </div>
-    </div>
-  );
-}
-
 export function Skills() {
-  const skillCategories: SkillCategory[] = [
+  const skillGroups: SkillGroup[] = [
     {
-      icon: <Code2 className="w-8 h-8 text-green-400" />,
-      title: "Frontend",
+      icon: <Layers className="w-5 h-5 text-green-400" />,
+      category: "Software Architecture & Patterns",
+      description: "Proven paradigms for maintainable, decoupled, and highly testable distributed systems.",
       skills: [
-        "React", "Next.js", "TypeScript", "JavaScript",
-        "Vue.js", "Qt/QML", "Tailwind CSS", "HTML/CSS",
-      ],
+        "CQRS Pattern",
+        "Hexagonal (Ports & Adapters)",
+        "Domain-Driven Design (DDD)",
+        "Test-Driven Development (TDD)",
+        "Microservices Architecture",
+        "Event-Driven Architecture",
+        "Asynchronous Pipeline Design"
+      ]
     },
     {
-      icon: <Server className="w-8 h-8 text-green-400" />,
-      title: "Backend",
+      icon: <Terminal className="w-5 h-5 text-green-400" />,
+      category: "Languages & Runtimes",
+      description: "Strictly-typed backends, high-performance embedded code, and modern frontends.",
       skills: [
-        "Python", "FastAPI", "Django", "Django REST Framework",
-        "Node.js", "Express.js", "PHP", "Laravel",
-      ],
+        "Python (FastAPI, Django, AsyncIO)",
+        "TypeScript (React, Next.js, Hono.js)",
+        "Runtimes: Bun.sh CLI & Node.js",
+        "MongoDB & Mongo Compass",
+        "C++ (Qt, QML, Embedded Systems)",
+        "SQL (PL/SQL, PostgreSQL, Query Optimization)",
+        "PHP (Laravel, Modern Serverless Bref)"
+      ]
     },
     {
-      icon: <Cloud className="w-8 h-8 text-green-400" />,
-      title: "Cloud & DevOps",
+      icon: <Database className="w-5 h-5 text-green-400" />,
+      category: "Data & Event Infrastructure",
+      description: "High-throughput messaging, spatial partitioning, and caching layers.",
       skills: [
-        "AWS Lambda", "EC2", "Docker", "Docker Compose",
-        "Kubernetes", "GitHub Actions", "CI/CD", "Nginx",
-      ],
+        "Kubernetes Multi-Pod Scaling",
+        "Redis Pub/Sub & Real-Time Queues",
+        "MongoDB & Mongo Compass (Geo-Spatial Sharding)",
+        "PostgreSQL & Concurrency Tuning",
+        "RabbitMQ & Celery Async Workers"
+      ]
     },
     {
-      icon: <Database className="w-8 h-8 text-green-400" />,
-      title: "Databases",
+      icon: <ShieldCheck className="w-5 h-5 text-green-400" />,
+      category: "Cloud, DevOps & Standards",
+      description: "Environment isolation, automotive safety compliance, and automated deployment.",
       skills: [
-        "PostgreSQL", "MongoDB", "Redis", "MySQL",
-        "Oracle", "Firebase", "MsSQL",
-      ],
-    },
-    {
-      icon: <Wrench className="w-8 h-8 text-green-400" />,
-      title: "Tools & Practices",
-      skills: [
-        "Git", "Jira", "Confluence", "Agile/Scrum",
-        "TDD", "REST APIs", "Celery", "RabbitMQ",
-      ],
-    },
-    {
-      icon: <Layout className="w-8 h-8 text-green-400" />,
-      title: "Specialized",
-      skills: [
-        "AUTOSAR", "MISRA", "DIC/IVI Systems",
-        "Serverless", "Bref CLI",
-      ],
-    },
+        "Multi-Env Pipelines (Dev / Staging / Prod)",
+        "AUTOSAR Automotive Framework",
+        "MISRA C++ Safety Guidelines",
+        "Docker & Container Orchestration",
+        "AWS (Lambda, Serverless, EC2)",
+        "GitHub Actions CI/CD Automation"
+      ]
+    }
   ];
 
   return (
-    <AnimatedSection>
-      <section className="py-20" id="skills">
-        <div className="max-w-6xl mx-auto">
-          <div className="mb-12">
-            <h2 className="section-heading text-3xl sm:text-4xl font-bold">Technical Skills</h2>
+    <section className="py-20" id="skills">
+      <AnimatedSection>
+        <div className="max-w-5xl mx-auto px-4">
+          
+          {/* Section Header */}
+          <div className="mb-14">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
+              <span className="text-xs font-mono uppercase tracking-widest text-zinc-400">
+                03 / Capabilities &amp; Architecture
+              </span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-3">
+              Engineering Disciplines
+            </h2>
+            <p className="text-base text-zinc-400 max-w-2xl font-normal leading-relaxed">
+              Curated capabilities spanning distributed systems, automotive functional safety,
+              and horizontal container scaling.
+            </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {skillCategories.map((category, index) => (
-              <SkillCard key={index} category={category} index={index} />
+
+          {/* 4-Quadrant Capability Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {skillGroups.map((group, idx) => (
+              <div
+                key={idx}
+                className="surface-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all hover:border-white/[0.16]"
+              >
+                <div>
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="p-2 rounded-lg bg-green-500/10 text-green-400 border border-green-500/20">
+                      {group.icon}
+                    </div>
+                    <h3 className="text-lg font-bold text-white tracking-tight">
+                      {group.category}
+                    </h3>
+                  </div>
+
+                  <p className="text-xs text-zinc-400 font-normal leading-relaxed mb-5">
+                    {group.description}
+                  </p>
+
+                  <div className="space-y-2 mb-2">
+                    {group.skills.map((skill, sIdx) => (
+                      <div
+                        key={sIdx}
+                        className="flex items-center justify-between px-3 py-2 rounded-lg bg-white/[0.02] border border-white/[0.05] text-xs font-mono text-zinc-200"
+                      >
+                        <span>{skill}</span>
+                        <span className="text-green-500/70 text-[10px]">●</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
+
         </div>
-      </section>
-    </AnimatedSection>
+      </AnimatedSection>
+    </section>
   );
 }

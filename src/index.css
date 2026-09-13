@@ -81,19 +81,19 @@
  */
 @layer base {
   :root {
-    --background: #0a0a0a;
+    --background: #09090b;
     --foreground: #fafafa;
-    --card: rgba(255, 255, 255, 0.03);
+    --card: #111114;
     --card-foreground: #fafafa;
-    --popover: #111111;
+    --popover: #121215;
     --popover-foreground: #fafafa;
     --primary: #22c55e;
     --primary-foreground: #052e16;
-    --secondary: rgba(255, 255, 255, 0.06);
+    --secondary: rgba(255, 255, 255, 0.04);
     --secondary-foreground: #a1a1aa;
-    --muted: rgba(255, 255, 255, 0.06);
-    --muted-foreground: #a1a1aa;
-    --accent: rgba(34, 197, 94, 0.1);
+    --muted: rgba(255, 255, 255, 0.04);
+    --muted-foreground: #71717a;
+    --accent: rgba(34, 197, 94, 0.08);
     --accent-foreground: #4ade80;
     --destructive: #ef4444;
     --destructive-foreground: #fafafa;
@@ -319,6 +319,121 @@ body {
 ::selection {
   background: rgba(34, 197, 94, 0.3);
   color: #fafafa;
+}
+
+/* ==========================================
+   CRAFT SURFACE STYLES
+   ========================================== */
+.surface-card {
+  background-color: #121215;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+  transition: all 0.2s ease-out;
+}
+
+.surface-card:hover {
+  background-color: #16161a;
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.surface-elevated {
+  background-color: #18181c;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08), 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+}
+
+/* ==========================================
+   CMDK (COMMAND PALETTE) STYLES
+   ========================================== */
+[cmdk-overlay] {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9998;
+  animation: cmdk-fade 0.15s ease-out;
+}
+
+[cmdk-dialog] {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92%;
+  max-width: 640px;
+  background: #111114;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  z-index: 9999;
+  animation: cmdk-scale 0.15s ease-out;
+}
+
+[cmdk-input] {
+  width: 100%;
+  padding: 16px 20px;
+  font-size: 15px;
+  color: #fafafa;
+  background: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+[cmdk-input]::placeholder {
+  color: #71717a;
+}
+
+[cmdk-list] {
+  max-height: 360px;
+  overflow-y: auto;
+  padding: 8px;
+}
+
+[cmdk-group-heading] {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #71717a;
+  padding: 8px 12px 4px 12px;
+}
+
+[cmdk-item] {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #d4d4d8;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.1s ease, color 0.1s ease;
+}
+
+[cmdk-item][data-selected="true"] {
+  background: rgba(34, 197, 94, 0.12);
+  color: #4ade80;
+}
+
+[cmdk-empty] {
+  text-align: center;
+  padding: 32px 16px;
+  color: #71717a;
+  font-size: 14px;
+}
+
+@keyframes cmdk-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes cmdk-scale {
+  from { opacity: 0; transform: translateX(-50%) scale(0.96); }
+  to { opacity: 1; transform: translateX(-50%) scale(1); }
 }
 
 /* ==========================================

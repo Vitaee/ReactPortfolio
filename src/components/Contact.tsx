@@ -1,131 +1,85 @@
-import { Mail, Linkedin, Github, Briefcase, ArrowRight } from 'lucide-react';
-import { cn } from '@/lib/utils';
-import { useInView } from '@/hooks/useInView';
+import { Mail, Linkedin, Github, Briefcase, ArrowUpRight } from 'lucide-react';
 import { AnimatedSection } from '@/components/AnimatedSection';
-import { Button } from '@/components/ui/button';
-import {
-  Tooltip,
-  TooltipTrigger,
-  TooltipContent,
-} from '@/components/ui/tooltip';
-
-interface ContactMethod {
-  href: string;
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-  tooltipLabel: string;
-  external?: boolean;
-  hoverShadow: string;
-}
-
-function ContactCard({ method, index }: { method: ContactMethod; index: number }) {
-  const { ref, isInView } = useInView({ threshold: 0.2 });
-
-  return (
-    <div
-      ref={ref}
-      style={{
-        opacity: isInView ? 1 : 0,
-        transform: isInView ? 'translateY(0)' : 'translateY(30px)',
-        transition: 'opacity 0.6s ease-out, transform 0.6s ease-out',
-        transitionDelay: `${index * 100}ms`,
-      }}
-    >
-      <Tooltip>
-        <TooltipTrigger asChild>
-          <a
-            href={method.href}
-            {...(method.external && {
-              target: '_blank',
-              rel: 'noopener noreferrer',
-            })}
-          >
-            <div
-              className={cn(
-                'glass-card rounded-xl glow-green transition-all cursor-pointer hover:scale-105 transform min-h-[140px] hover:shadow-lg',
-                method.hoverShadow
-              )}
-            >
-              <div className="flex flex-col items-center p-6">
-                {method.icon}
-                <h3 className="text-xl font-bold mb-2 text-zinc-50">{method.title}</h3>
-                <p className="text-zinc-400 text-sm sm:text-base">{method.description}</p>
-              </div>
-            </div>
-          </a>
-        </TooltipTrigger>
-        <TooltipContent>{method.tooltipLabel}</TooltipContent>
-      </Tooltip>
-    </div>
-  );
-}
 
 export function Contact() {
-  const contactMethods: ContactMethod[] = [
+  const contactLinks = [
     {
-      href: 'https://www.linkedin.com/in/can-ilgu-657730198/',
-      icon: <Linkedin className="w-8 h-8 mb-4 text-blue-400" />,
+      title: 'Email Direct',
+      subtitle: 'canilguu@gmail.com',
+      href: 'mailto:canilguu@gmail.com',
+      icon: <Mail className="w-5 h-5 text-emerald-400" />,
+      actionText: 'Send Email'
+    },
+    {
       title: 'LinkedIn',
-      description: 'Connect with me',
-      tooltipLabel: 'Open LinkedIn profile',
-      external: true,
-      hoverShadow: 'hover:shadow-blue-500/20',
+      subtitle: 'in/can-ilgu-657730198',
+      href: 'https://www.linkedin.com/in/can-ilgu-657730198/',
+      icon: <Linkedin className="w-5 h-5 text-emerald-400" />,
+      actionText: 'Connect'
     },
     {
-      href: 'https://github.com/Vitaee',
-      icon: <Github className="w-8 h-8 mb-4 text-purple-400" />,
       title: 'GitHub',
-      description: 'View my projects',
-      tooltipLabel: 'Open GitHub profile',
-      external: true,
-      hoverShadow: 'hover:shadow-purple-500/20',
+      subtitle: '@Vitaee',
+      href: 'https://github.com/Vitaee',
+      icon: <Github className="w-5 h-5 text-emerald-400" />,
+      actionText: 'View Code'
     },
     {
-      href: 'https://www.upwork.com/freelancers/~0136472a1b8e5766da',
-      icon: <Briefcase className="w-8 h-8 mb-4 text-teal-400" />,
       title: 'Upwork',
-      description: 'Hire me on Upwork',
-      tooltipLabel: 'Open Upwork profile',
-      external: true,
-      hoverShadow: 'hover:shadow-teal-500/20',
+      subtitle: 'Top Rated Contractor',
+      href: 'https://www.upwork.com/freelancers/~0136472a1b8e5766da',
+      icon: <Briefcase className="w-5 h-5 text-emerald-400" />,
+      actionText: 'Hire'
     },
   ];
 
   return (
-    <AnimatedSection>
-      <section className="py-20" id="contact">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="mb-8">
-            <h2 className="section-heading text-3xl sm:text-4xl font-bold">Let's Connect</h2>
+    <section className="py-24" id="contact">
+      <AnimatedSection>
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          
+          <div className="flex items-center justify-center gap-2 mb-3">
+            <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
+            <span className="text-xs font-mono uppercase tracking-widest text-zinc-400">
+              06 / Get In Touch
+            </span>
           </div>
 
-          {/* Primary CTA */}
-          <p className="text-lg sm:text-xl text-zinc-400 mb-4 max-w-xl mx-auto">
-            Have a project in mind? I'd love to hear about it.
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-3">
+            Let's Discuss Systems &amp; Architecture
+          </h2>
+          <p className="text-base text-zinc-400 max-w-xl mx-auto mb-10 font-normal leading-relaxed">
+            Open to senior engineering roles, distributed architecture advisory, and technical consulting.
           </p>
-          <div className="flex justify-center mb-12">
-            <Button
-              asChild
-              className="bg-green-500 hover:bg-green-400 text-black font-semibold px-8 py-4 text-lg transition-all hover:scale-105 transform gap-2"
-            >
-              <a href="mailto:canilguu@gmail.com">
-                <Mail className="w-5 h-5" />
-                canilguu@gmail.com
-                <ArrowRight className="w-4 h-4" />
-              </a>
-            </Button>
-          </div>
 
-          {/* Secondary links */}
-          <p className="text-sm text-zinc-500 mb-6 uppercase tracking-wider">Or find me on</p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto">
-            {contactMethods.map((method, index) => (
-              <ContactCard key={method.title} method={method} index={index} />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto mb-12">
+            {contactLinks.map((item, idx) => (
+              <a
+                key={idx}
+                href={item.href}
+                target={item.href.startsWith('mailto:') ? undefined : '_blank'}
+                rel={item.href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
+                className="surface-card rounded-2xl p-5 text-left flex items-center justify-between transition-all hover:border-white/[0.18] group cursor-pointer"
+              >
+                <div className="flex items-center gap-3.5">
+                  <div className="p-2.5 rounded-xl bg-white/[0.03] border border-white/[0.06] text-zinc-300 group-hover:text-green-400 transition-colors">
+                    {item.icon}
+                  </div>
+                  <div>
+                    <div className="text-sm font-semibold text-white tracking-tight">{item.title}</div>
+                    <div className="text-xs font-mono text-zinc-400">{item.subtitle}</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-1 text-xs font-mono text-zinc-500 group-hover:text-zinc-300 transition-colors">
+                  <span>{item.actionText}</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </div>
+              </a>
             ))}
           </div>
+
         </div>
-      </section>
-    </AnimatedSection>
+      </AnimatedSection>
+    </section>
   );
 }

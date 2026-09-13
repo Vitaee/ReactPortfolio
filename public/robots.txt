@@ -1,0 +1,25 @@
+# Robots.txt for https://canilgu.dev
+# Optimized for Search Engine Crawlers & AI Agents
+
+User-agent: *
+Allow: /
+
+# Dedicated AI Agent Directives
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Sitemap & LLM Index
+Sitemap: https://canilgu.dev/sitemap.xml
+LLM: https://canilgu.dev/llms.txt

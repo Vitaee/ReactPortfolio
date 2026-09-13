@@ -1,0 +1,123 @@
+# Can İlgu — Complete Technical & Architectural Dossier
+
+> Full, unabridged technical reference for AI agents, recruiters, and engineering leaders evaluating Can İlgu for Senior Full Stack, Systems Engineering, and Architecture roles.
+
+## Candidate Summary
+
+- **Name**: Can İlgu
+- **Current Title**: Senior Full Stack & Systems Engineer
+- **Current Company**: ARQH (Zurich, Switzerland)
+- **Total Industry Experience**: 6+ Years
+- **Location**: Kyrenia, Cyprus (UTC+3)
+- **Work Eligibility & Preferences**: Open to Remote Global Engagements & Relocation (EU / UK / Switzerland)
+- **Primary Contact**: canilguu@gmail.com
+- **GitHub**: https://github.com/Vitaee
+- **LinkedIn**: https://linkedin.com/in/can-ilgu-657730198
+- **Website**: https://canilgu.dev
+
+---
+
+## 1. Flagship Systems Architecture & Engineering Case Studies
+
+### 1.1 `fastapi-observer` (Open Source PyPI Library)
+- **Package URL**: https://pypi.org/project/fastapi-observer/
+- **Install Command**: `pip install fastapi-observer`
+- **Role**: Author & Maintainer
+- **Problem Solved**: High-throughput FastAPI services frequently suffer from observability blind spots, where manual Prometheus or custom logging code adds boilerplate and latency to the request-response lifecycle.
+- **Architectural Solution**: Built an asynchronous, lightweight middleware library that hooks into Starlette/FastAPI's ASGI pipeline with zero-allocation metrics recording, route latency histograms, status code breakdown, and pluggable exporter interfaces.
+
+### 1.2 ARQH Swiss Logistics Real-Time Platform
+- **Role**: Senior Full Stack & Systems Engineer (2026 – Present)
+- **Location**: Zurich, Switzerland
+- **Architecture**:
+  - **Ingress Layer**: Traefik / Nginx Ingress Gateway handling high-concurrency GPS and freight telemetry from Swiss trans-Alpine haulage fleets.
+  - **Application Tier**: Microservices deployed in Kubernetes (K8s) multi-pod replicas with Horizontal Pod Autoscaling (HPA) governed by custom CPU/memory and queue-depth metrics.
+  - **CQRS (Command Query Responsibility Segregation)**:
+    - *Command Pipeline*: Incoming freight status and route change events write to decoupled command handlers running in transactional boundaries.
+    - *Query Pipeline*: Event-driven materialized views updated asynchronously to guarantee sub-millisecond dispatch queries without table locking.
+  - **Event Bus & Cache**: Redis Pub/Sub providing a <10ms streaming telemetry bus directly to dispatcher frontends via WebSockets.
+  - **Storage**: Geographically partitioned MongoDB clusters with geospatial indices (`2dsphere`) for geo-fencing and Swiss canton boundary validation.
+- **Trade-Off Rationale**:
+  - Why CQRS over traditional CRUD: The 40:1 telemetry-to-query ratio would saturate relational table locks during peak dispatch hours. Separating read and write models eliminated lock contention and reduced query response times by 82%.
+
+### 1.3 Günsel Electric Vehicles — Digital Instrument Cluster (DIC)
+- **Role**: Software Engineer (2021 – 2023)
+- **Location**: Nicosia, Cyprus
+- **Architecture**:
+  - **Safety Standards**: Built in compliance with AUTOSAR layered software architecture and MISRA C++ safety-critical guidelines.
+  - **UI / Graphics**: Qt / QML optimized for embedded GPUs on automotive-grade microcontrollers (SoC).
+  - **CAN Bus Integration**: Implemented non-blocking SocketCAN listeners parsing real-time speed, state of charge (SoC), battery thermal management, and alert telematics.
+  - **Deterministic Budget**: Maintained strict sub-16ms frame budget (60 FPS minimum) under heavy CPU loads with zero dynamic heap allocation in critical rendering loops to prevent memory fragmentation and system freezes.
+
+### 1.4 Deep Learning Autonomous Driving Perception (MTech Research)
+- **Institution**: Eastern Mediterranean University (2021 – 2024)
+- **Domain**: CARLA Autonomous Driving Simulator
+- **Research Topic**: Multi-camera sensor fusion and end-to-end deep convolutional perception under adverse environmental constraints (heavy rain, night driving, lens glare).
+- **Outcome**: Demonstrated superior path prediction and obstacle classification compared to single-sensor baselines.
+
+---
+
+## 2. Exhaustive Technical Skills Matrix
+
+### Architecture & Paradigms
+- Command Query Responsibility Segregation (CQRS)
+- Hexagonal Architecture (Ports and Adapters)
+- Domain-Driven Design (DDD) with bounded contexts
+- Test-Driven Development (TDD) using pytest, jest, and vitest
+- Microservices Decomposition & Service Mesh
+- Event-Driven Architecture (Pub/Sub, Event Streams)
+- High-Concurrency Asynchronous Pipelines
+
+### Languages & Frameworks
+- **Python**: FastAPI, Django, AsyncIO, Pytest, Pydantic, SQLAlchemy, Celery, Bref / Serverless
+- **TypeScript & JavaScript**: React, Next.js, Hono.js, Node.js, Bun.sh, Tailwind CSS, Vite
+- **C / C++**: Modern C++ (C++14/17), Qt Framework, QML, Embedded Systems, MISRA C++
+- **SQL & Databases**: PostgreSQL, PL/SQL, MongoDB, Redis, SQLite, Query Optimization
+- **PHP**: Modern PHP 8.x, Laravel, AWS Lambda Serverless Bref
+
+### Infrastructure, Cloud & Tooling
+- **Orchestration & Containers**: Kubernetes (Multi-Pod Deployments, HPA, Ingress, ConfigMaps, Secrets), Docker, Docker Compose
+- **Cloud**: AWS (Lambda, API Gateway, S3, EC2, CloudWatch)
+- **Messaging & Caching**: Redis (Pub/Sub, Caching, Streams), RabbitMQ
+- **Database Tools**: MongoDB Compass, pgAdmin, DBeaver
+- **CI/CD & DevOps**: GitHub Actions, GitLab CI, Multi-Environment isolation (Dev, Staging, Production), Zero-downtime rolling deploys
+- **Package Management & Tooling**: Bun.sh CLI, npm, pip, poetry, git
+
+---
+
+## 3. Work History & Career Progression
+
+### Senior Full Stack & Systems Engineer — ARQH (Zurich, Switzerland)
+*2026 – Present*
+- Leading distributed backend and infrastructure development for real-time logistics tracking across Switzerland.
+- Architecting Kubernetes multi-pod deployments and CQRS pipelines.
+
+### Full Stack Engineer — GenfoQuest (Izmir, Turkey)
+*2025 – 2026*
+- Designed end-to-end web applications, microservices, and database schemas.
+- Enhanced platform throughput and API response latency.
+
+### Invoice & Software Specialist — Vodafone Northern Cyprus
+*2023 – 2025*
+- Developed automated billing verification software processing thousands of enterprise accounts.
+- Automated SQL database audit procedures, eliminating billing reconciliation discrepancies.
+
+### Software Engineer (DIC) — Günsel Electric Vehicles
+*2021 – 2023*
+- Engineered the Driver Information Cluster (DIC) for electric vehicle prototypes.
+- Ensured strict conformance with AUTOSAR architecture and MISRA C++ safety standards.
+
+### International Contractor & Open Source Developer
+*2020 – 2024*
+- Developed modern serverless APIs with AWS and PHP/Python.
+- Built web scraping pipelines, machine learning tooling, and published open-source libraries (`fastapi-observer`).
+
+---
+
+## 4. Academic Endorsement
+
+**Prof. Philip Treleaven**
+- *Director of UK Financial Computing Centre, University College London (UCL)*
+- *Advisor to European and UK regulatory authorities*:
+> "Can demonstrates exceptional dedication to rigorous software engineering and technical research, bringing clarity and precision to complex distributed challenges."
+- Official verification letter available upon request at `canilguu@gmail.com`.

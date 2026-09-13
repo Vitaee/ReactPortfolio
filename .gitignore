@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Confidential documents / CVs
+*.pdf
+CV_Can_Ilgu.pdf

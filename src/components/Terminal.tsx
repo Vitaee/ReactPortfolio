@@ -38,39 +38,36 @@ function processCommand(cmd: string): string[] {
 
     case 'about':
       return [
-        '  Full Stack Engineer with 5+ years of experience.',
-        '  I build things that moved from vehicle infotainment',
-        '  systems to real-time logistics platforms.',
-        '  Python, TypeScript, and everything in between.',
+        '  Can İlgu — Senior Full Stack & Systems Engineer',
+        '  Currently architecting distributed logistics & K8s pipelines @ ARQH (Zurich).',
+        '  Author of fastapi-observer (PyPI).',
+        '  Background in safety-critical automotive instrument clusters & CARLA DL.',
       ];
 
     case 'skills':
       return [
-        '  Python       █████████████████████  95%',
-        '  TypeScript   ██████████████████░░░  90%',
-        '  React        █████████████████████  95%',
-        '  FastAPI      █████████████████████  95%',
-        '  Docker       ██████████████████░░░  90%',
-        '  PostgreSQL   ██████████████████░░░  90%',
+        '  Architecture : CQRS, Hexagonal (Ports & Adapters), TDD, DDD, Microservices',
+        '  Languages    : Python (FastAPI, Django), TypeScript (Next.js, Hono.js), Bun CLI, C++, SQL',
+        '  Data & Queues: Kubernetes, Redis Pub/Sub, MongoDB (Mongo Compass), PostgreSQL',
+        '  Standards    : AUTOSAR, MISRA Guidelines, Multi-Env (Dev/Stg/Prod), Docker',
       ];
 
     case 'experience':
       return [
-        '  ┌───────────────────────────────────────────────────────────┐',
-        '  │ ARQH              Sr. Full Stack Engineer   2026–now     │',
-        '  │ GenfoQuest         Full Stack Engineer      2025–2026    │',
-        '  │ Vodafone Cyprus    Software Specialist      2023–2025    │',
-        '  │ Günsel EV          Software Engineer        2021–2023    │',
-        '  │ Freelance          Independent Contractor   2022–2024    │',
-        '  │ Early Career       Internships & Contracts  2020–2022    │',
-        '  └───────────────────────────────────────────────────────────┘',
+        '  ┌──────────────────────────────────────────────────────────────────┐',
+        '  │ ARQH (Zurich)       Sr. Full Stack & Systems Engineer  2026–now  │',
+        '  │ GenfoQuest (Izmir)  Full Stack Engineer               2025–2026 │',
+        '  │ Vodafone Cyprus     Invoice & Software Specialist      2023–2025 │',
+        '  │ Günsel EV (Cyprus)  Software Engineer (DIC/AUTOSAR)    2021–2023 │',
+        '  │ Global Contractor   Serverless, ML DevOps, Trade Govt  2022–2024 │',
+        '  │ Early Career        Scraping, OAuth2, Mobile APIs      2020–2022 │',
+        '  └──────────────────────────────────────────────────────────────────┘',
       ];
 
     case 'education':
       return [
-        '  🎓 Eastern Mediterranean University — MTech Information Technology (2025)',
-        '     Thesis: Autonomous Driving with Deep Learning in CARLA Simulator',
-        '  🎓 Near East University — BSc. Software Engineering (2023)',
+        '  🎓 Eastern Mediterranean University — MTech Information Technology (Thesis: CARLA)',
+        '  🎓 Near East University — BSc. Software Engineering',
       ];
 
     case 'contact':
@@ -82,9 +79,10 @@ function processCommand(cmd: string): string[] {
 
     case 'projects':
       return [
-        '  📦 fastapi-observer',
-        '     A lightweight monitoring & observability library for FastAPI.',
-        '     → github.com/Vitaee/fastapi-observer',
+        '  📦 fastapi-observer — Open-source PyPI monitoring library for FastAPI',
+        '  🇨🇭 ARQH Logistics   — CQRS, Kubernetes multi-pod scaling, Redis pub/sub',
+        '  🚗 Günsel EV DIC     — Safety-critical automotive cluster (AUTOSAR/MISRA)',
+        '  🧠 CARLA Simulator  — MTech deep learning autonomous driving thesis',
       ];
 
     case 'secret':
